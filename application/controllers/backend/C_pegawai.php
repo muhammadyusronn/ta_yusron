@@ -6,6 +6,7 @@ class C_pegawai extends MY_Controller
     {
         parent::__construct();
         $this->load->model('m_pegawai');
+        $this->load->model('m_jabatan');
         $this->data['token'] = $this->session->userdata('token');
         if (!isset($this->data['token'])) {
             $this->flashmsg('Anda harus login untuk mengakses halaman tersebut', 'warning');
@@ -20,13 +21,14 @@ class C_pegawai extends MY_Controller
     public function index()
     {
         $data['title'] = 'Data Pegawai';
-        $data['pegawai_data'] =  $this->m_pegawai->get();
+        $data['pegawai_data'] =  $this->m_pegawai->get_data();
         $this->render('backend/pegawai/pegawai-data', $data);
     }
 
     public function create()
     {
         $data['title'] = 'Create Pegawai';
+        $data['jabatan_data'] =  $this->m_jabatan->get();
         $this->render('backend/pegawai/pegawai-create', $data);
     }
 

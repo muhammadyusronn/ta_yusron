@@ -25,9 +25,9 @@
                                         $no = 0;
                                         foreach ($pegawai_data as $i) : $no++; ?>
                                             <tr>
-                                                <td><?= $i->nip?></td>
+                                                <td><?= $i->nip ?></td>
                                                 <td><?= $i->nama ?></td>
-                                                <td><?= $i->jabatan?></td>
+                                                <td><?= $i->namajabatan ?></td>
                                                 <td><?= $i->kontak ?></td>
                                                 <td>
                                                     <a class="btn btn-inverse-primary btn-fw" title="Detail"><i class="fas fa-eye"></i></a>

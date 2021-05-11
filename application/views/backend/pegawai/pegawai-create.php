@@ -19,7 +19,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="jabatan">Jabatan Pegawai</label>
-                                        <input id="jabatan" class="form-control" name="jabatan" type="text">
+                                        <select id="jabatan" class="form-control" name="jabatan">
+                                            <option disabled>Pilih Jabatan</option>
+                                            <?php foreach ($jabatan_data as $i) : ?>
+                                                <option value="<?= $i->id_jabatan ?>"><?= $i->namajabatan ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="kontak">Kontak Pegawai</label>

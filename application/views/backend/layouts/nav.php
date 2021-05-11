@@ -143,12 +143,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/widgets/widgets.html">
-                        <i class="fas fa-cogs menu-icon"></i>
-                        <span class="menu-title">Widgets</span>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-user menu-icon"></i>
                         <span class="menu-title">User</span>
@@ -183,57 +177,6 @@
                             <li class="nav-item"><a class="nav-link" href="<?= base_url('jabatan') ?>">Data Jabatan</a></li>
                         </ul>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fab fa-wpforms menu-icon"></i>
-                        <span class="menu-title">Forms</span>
-                        <i class="fas fa-sort-down menu-arrow"></i></a>
-                    <div class="submenu">
-                        <ul class="submenu-item">
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('user/user-create') ?>">User</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('pegawai/pegawai-create') ?>">Pegawai</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('gedung/gedung-create') ?>">Gedung</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('ruangan/ruangan-create') ?>">Ruangan</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('kategori/kategori-create') ?>">Kategori Barang</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('barang/barang-create') ?>">Barang</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-book menu-icon"></i>
-                        <span class="menu-title">Data</span>
-                        <i class="fas fa-sort-down menu-arrow"></i></a>
-                    <div class="submenu">
-                        <ul class="submenu-item">
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('user') ?>">User</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('pegawai') ?>">Pegawai</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('gedung') ?>">Gedung</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('ruangans') ?>">Ruangan</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('kategori') ?>">Kategori Barang</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('barang') ?>">Barang</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-box menu-icon"></i>
-                        <span class="menu-title">Apps</span>
-                        <i class="fas fa-sort-down menu-arrow"></i></a>
-                    <div class="submenu">
-                        <ul class="submenu-item">
-                            <li class="nav-item"><a class="nav-link" href="pages/apps/email.html">Email</a></li>
-                            <li class="nav-item"><a class="nav-link" href="pages/apps/calendar.html">Calendar</a></li>
-                            <li class="nav-item"><a class="nav-link" href="pages/apps/todo.html">Todo List</a></li>
-                            <li class="nav-item"><a class="nav-link" href="pages/apps/gallery.html">Gallery</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/documentation/documentation.html" class="nav-link">
-                        <i class="fas fa-receipt menu-icon"></i>
-                        <span class="menu-title">Documentation</span></a>
                 </li>
             </ul>
         </div>

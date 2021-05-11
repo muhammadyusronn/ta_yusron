@@ -187,7 +187,6 @@
         },
         jabatan:{
           required: true,
-          minlength: 2
         },
         kontak:{
           required: true,
@@ -196,8 +195,7 @@
       },
       messages: {
          nama: {
-          required: "Masukan Nama Pegawai",
-          minlength: "Nama Pegawai minimal 2 karakter"
+          required: "Masukan Nama Pegawai"
         },
         nip: {
           required: "Masukan NIP Pegawai",
