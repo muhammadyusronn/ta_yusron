@@ -26,7 +26,7 @@ class C_user extends MY_Controller
 
     public function create()
     {
-        $data['title'] = 'Create User';
+        $data['title'] = 'Tambah Data User';
         $this->render('backend/user/user-create', $data);
     }
 
