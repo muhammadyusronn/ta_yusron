@@ -31,7 +31,7 @@
                                                 <td><?= $i->kontak ?></td>
                                                 <td>
                                                     <a class="btn btn-inverse-primary btn-fw" title="Detail"><i class="fas fa-eye"></i></a>
-                                                    <a href="<?= base_url('backend/c_pegawai/destroy/' . $i->id_pegawai); ?>" class="btn btn-inverse-danger btn-fw" title="HAPUS"><i class="fas fa-trash"></i></a>
+                                                    <a href="<?= base_url('backend/c_pegawai/destroy/' . $i->id_pegawai); ?>" class="btn btn-inverse-danger btn-fw tombol-hapus" title="HAPUS"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

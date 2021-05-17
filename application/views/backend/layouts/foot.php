@@ -1,8 +1,8 @@
 <!-- partial:partials/_footer.html -->
 <footer class="footer">
     <div class="w-100 clearfix">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a href="https://www.github.com/muhammadyusronn" target="_blank">Muhammad Yusron Hartoyo</a>. All rights reserved.</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Muhammad Yusron Hartoyo & made with <i class="ti-heart text-danger ml-1"></i></span>
     </div>
 </footer>
 <!-- partial -->
@@ -38,8 +38,15 @@
 <!-- Form Validation -->
 <script src="<?= base_url('assets/vendors/jquery-validation/jquery.validate.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js') ?>"></script>
-<script src="<?= base_url('assets/js/form-validation.js') ?>"></script>
-<script src="<?= base_url('assets/js/bt-maxLength.js') ?>"></script>
+<l src="<?= base_url('assets/js/form-validation.js') ?>"></l>
+<l src="<?= base_url('assets/js/bt-maxLength.js') ?>"></l>
+<!-- End Form Validation -->
+<!-- Sweet Alert -->
+<script src="<?= base_url('assets/sweetalert/sweetalert2.min.js') ?>"></script>
+<script src="<?= base_url('assets/sweetalert/sweetalert.js') ?>"></script>
+<!-- Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- End Sweet Alert -->
 </body>
 
 

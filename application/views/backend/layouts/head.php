@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/vendors/ti-icons/css/themify-icons.css') ?>">
     <link rel="stylesheet" href=".<?= base_url('./../vendors/css/vendor.bundle.base.css') ?>">
     <!-- endinject -->
+    <!-- Sweet alert -->
+    <link rel="stylesheet" href="<?= base_url('assets/sweetalert/sweetalert2.min.css') ?>">
     <!-- Data tables -->
     <link rel="stylesheet" href="<?= base_url('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') ?>">
     <!-- End Data tables -->
