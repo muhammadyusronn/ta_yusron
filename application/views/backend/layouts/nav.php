@@ -178,6 +178,30 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ti-pencil-alt menu-icon"></i>
+                        <span class="menu-title">Kriteria</span>
+                        <i class="fas fa-sort-down menu-arrow"></i></a>
+                    <div class="submenu">
+                        <ul class="submenu-item">
+                            <li class="nav-item"><a class="nav-link" href="<?= base_url('create-krt') ?>">Tambah Kriteria</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?= base_url('kriteria') ?>">Data Kriteria</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ti-pencil-alt menu-icon"></i>
+                        <span class="menu-title">Penilaian</span>
+                        <i class="fas fa-sort-down menu-arrow"></i></a>
+                    <div class="submenu">
+                        <ul class="submenu-item">
+                            <li class="nav-item"><a class="nav-link" href="<?= base_url('create-pnl') ?>">Tambah Penilaian</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?= base_url('penilaian') ?>">Data Penilaian</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

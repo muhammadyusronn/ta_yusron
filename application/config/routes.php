@@ -22,6 +22,11 @@ $route['pegawai']                        = 'backend/c_pegawai/index';
 $route['create-pgw']                     = 'backend/c_pegawai/create';
 $route['pegawai/save']                   = 'backend/c_pegawai/save';
 $route['pegawai/destroy']                = 'backend/c_pegawai/destroy';
+// routes Jabatan
+$route['kriteria']                        = 'backend/c_kriteria/index';
+$route['create-krt']                      = 'backend/c_kriteria/create';
+$route['kriteria/save']                   = 'backend/c_kriteria/save';
+$route['kriteria/destroy']                = 'backend/c_kriteria/destroy';
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
