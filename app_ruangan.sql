@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 10 Bulan Mei 2021 pada 19.26
+-- Waktu pembuatan: 02 Jul 2021 pada 11.05
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -19,68 +19,74 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `app_ruangan`
+-- Database: `tugasakhir_yusron`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang`
+-- Struktur dari tabel `departement`
 --
 
-CREATE TABLE `barang` (
-  `id_barang` int(11) NOT NULL,
-  `kodebarang` varchar(20) NOT NULL,
-  `namabarang` varchar(100) NOT NULL,
-  `jumlahbarang` int(11) NOT NULL,
-  `kategori_id` int(11) DEFAULT NULL
+CREATE TABLE `departement` (
+  `id_departement` int(11) NOT NULL,
+  `namadepartement` varchar(100) NOT NULL,
+  `deskripsidepartement` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `barang`
+-- Dumping data untuk tabel `departement`
 --
 
-INSERT INTO `barang` (`id_barang`, `kodebarang`, `namabarang`, `jumlahbarang`, `kategori_id`) VALUES
-(0, 'BRG001', 'Spidol', 10, 1);
+INSERT INTO `departement` (`id_departement`, `namadepartement`, `deskripsidepartement`) VALUES
+(2, 'Poly Anak', 'tess');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gedung`
+-- Struktur dari tabel `jabatan`
 --
 
-CREATE TABLE `gedung` (
-  `id_gedung` int(11) NOT NULL,
-  `kodegedung` varchar(20) NOT NULL,
-  `namagedung` varchar(100) NOT NULL,
-  `alamat` text NOT NULL
+CREATE TABLE `jabatan` (
+  `id_jabatan` int(11) NOT NULL,
+  `namajabatan` varchar(50) NOT NULL,
+  `deskripsijabatan` text NOT NULL,
+  `departement_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `gedung`
+-- Dumping data untuk tabel `jabatan`
 --
 
-INSERT INTO `gedung` (`id_gedung`, `kodegedung`, `namagedung`, `alamat`) VALUES
-(2, 'GED001', 'Gedung Pendidikan', 'Jalan Demang Lebar Daun');
+INSERT INTO `jabatan` (`id_jabatan`, `namajabatan`, `deskripsijabatan`, `departement_id`) VALUES
+(2, 'Kepala', 'Kepala Ruangan', 2);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Struktur dari tabel `kriteria`
 --
 
-CREATE TABLE `kategori` (
-  `id_kategori` int(11) NOT NULL,
-  `namakategori` varchar(50) NOT NULL,
-  `deskripsikategori` text NOT NULL
+CREATE TABLE `kriteria` (
+  `kriteria_id` int(11) NOT NULL,
+  `kriteria_nama` varchar(100) NOT NULL,
+  `kriteria_nilai` int(11) NOT NULL,
+  `kriteria_bobot` double NOT NULL,
+  `kriteria_sifat` enum('Benefit','Cost') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data untuk tabel `kategori`
+-- Struktur dari tabel `nilai`
 --
 
-INSERT INTO `kategori` (`id_kategori`, `namakategori`, `deskripsikategori`) VALUES
-(1, 'Alat Tulis', 'Ini adalah Alat Tulis');
+CREATE TABLE `nilai` (
+  `nilai_id` int(11) NOT NULL,
+  `id_pegawai` int(11) NOT NULL,
+  `kriteria_id` int(11) NOT NULL,
+  `nilai` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -92,7 +98,7 @@ CREATE TABLE `pegawai` (
   `id_pegawai` int(11) NOT NULL,
   `nip` varchar(20) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `jabatan` varchar(50) NOT NULL,
+  `jabatan` int(11) DEFAULT NULL,
   `kontak` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -101,31 +107,7 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id_pegawai`, `nip`, `nama`, `jabatan`, `kontak`) VALUES
-(1, '12345', 'Gusti', 'Laboran', '08128829920'),
-(2, '123456', 'Ruben Hidayat', 'Laboran', '0812772882992');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `ruangan`
---
-
-CREATE TABLE `ruangan` (
-  `id_ruangan` int(11) NOT NULL,
-  `koderuangan` varchar(20) NOT NULL,
-  `namaruangan` varchar(50) NOT NULL,
-  `deskripsiruangan` text NOT NULL,
-  `lokasi` text NOT NULL,
-  `penanggungjawab` int(11) DEFAULT NULL,
-  `gedung_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `ruangan`
---
-
-INSERT INTO `ruangan` (`id_ruangan`, `koderuangan`, `namaruangan`, `deskripsiruangan`, `lokasi`, `penanggungjawab`, `gedung_id`) VALUES
-(1, 'LAB001', 'Lab Basis Data', 'Ini adalah lab basis data', 'Kampus Palembang', 1, 2);
+(3, '09010581620013', 'Muhammad Yusron Hartoyo', NULL, '082186427595');
 
 -- --------------------------------------------------------
 
@@ -148,48 +130,44 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nip`, `nama`, `kontak`, `level`, `password`, `last_login`) VALUES
-(3, '2222', 'Gusti', '0812882992', 'Admin', '$2y$10$uEuN962iKUXnJKaVz8/0HeVXQuEUzk5MfLNEJjhBfPDsPRP.t7mhm', '2021-05-10 17:26:26'),
-(4, '1111', 'Yusron', '08128829922', 'Pimpinan', '$2y$10$Mf2Hofmr2OLHxQP2co1YRuorTlDHz0OG3A5bjHyxZCWgizCibrwVm', '2021-05-10 17:11:23');
+(8, '1111', 'Yusron', '0812882929121', 'Admin', '$2y$10$0lUKsflEUpMG1kHB2KJjZur8feVnhnesgdY8UxZOVuERDWA966XJK', '2021-07-02 03:12:29');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `barang`
+-- Indeks untuk tabel `departement`
 --
-ALTER TABLE `barang`
-  ADD UNIQUE KEY `kodebarang` (`kodebarang`),
-  ADD KEY `kategori_id` (`kategori_id`);
+ALTER TABLE `departement`
+  ADD PRIMARY KEY (`id_departement`);
 
 --
--- Indeks untuk tabel `gedung`
+-- Indeks untuk tabel `jabatan`
 --
-ALTER TABLE `gedung`
-  ADD PRIMARY KEY (`id_gedung`),
-  ADD UNIQUE KEY `kodegedung` (`kodegedung`);
+ALTER TABLE `jabatan`
+  ADD PRIMARY KEY (`id_jabatan`),
+  ADD KEY `departement_id` (`departement_id`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indeks untuk tabel `kriteria`
 --
-ALTER TABLE `kategori`
-  ADD PRIMARY KEY (`id_kategori`);
+ALTER TABLE `kriteria`
+  ADD PRIMARY KEY (`kriteria_id`);
+
+--
+-- Indeks untuk tabel `nilai`
+--
+ALTER TABLE `nilai`
+  ADD PRIMARY KEY (`nilai_id`);
 
 --
 -- Indeks untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`id_pegawai`),
-  ADD UNIQUE KEY `nip` (`nip`);
-
---
--- Indeks untuk tabel `ruangan`
---
-ALTER TABLE `ruangan`
-  ADD PRIMARY KEY (`id_ruangan`),
-  ADD UNIQUE KEY `koderuangan` (`koderuangan`),
-  ADD KEY `gedung_id` (`gedung_id`),
-  ADD KEY `ruangan_ibfk_2` (`penanggungjawab`);
+  ADD UNIQUE KEY `nip` (`nip`),
+  ADD KEY `jabatan` (`jabatan`);
 
 --
 -- Indeks untuk tabel `user`
@@ -203,51 +181,56 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `gedung`
+-- AUTO_INCREMENT untuk tabel `departement`
 --
-ALTER TABLE `gedung`
-  MODIFY `id_gedung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `departement`
+  MODIFY `id_departement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT untuk tabel `jabatan`
 --
-ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `jabatan`
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `kriteria`
+--
+ALTER TABLE `kriteria`
+  MODIFY `kriteria_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `nilai`
+--
+ALTER TABLE `nilai`
+  MODIFY `nilai_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT untuk tabel `ruangan`
---
-ALTER TABLE `ruangan`
-  MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Ketidakleluasaan untuk tabel `barang`
+-- Ketidakleluasaan untuk tabel `jabatan`
 --
-ALTER TABLE `barang`
-  ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id_kategori`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `jabatan`
+  ADD CONSTRAINT `jabatan_ibfk_1` FOREIGN KEY (`departement_id`) REFERENCES `departement` (`id_departement`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `ruangan`
+-- Ketidakleluasaan untuk tabel `pegawai`
 --
-ALTER TABLE `ruangan`
-  ADD CONSTRAINT `ruangan_ibfk_1` FOREIGN KEY (`gedung_id`) REFERENCES `gedung` (`id_gedung`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `ruangan_ibfk_2` FOREIGN KEY (`penanggungjawab`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `pegawai`
+  ADD CONSTRAINT `pegawai_ibfk_1` FOREIGN KEY (`jabatan`) REFERENCES `jabatan` (`id_jabatan`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

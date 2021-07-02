@@ -1,11 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class C_jabatan extends MY_Controller
+class C_departement extends MY_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_jabatan');
         $this->load->model('m_departement');
         $this->data['token'] = $this->session->userdata('token');
         if (!isset($this->data['token'])) {
@@ -20,29 +19,28 @@ class C_jabatan extends MY_Controller
 
     public function index()
     {
-        $data['title'] = 'Data Jabatan';
-        $data['jabatan_data'] =  $this->m_jabatan->get_data();
-        $this->render('backend/jabatan/jabatan-data', $data);
+        $data['title'] = 'Data Departement';
+        $data['departement_data'] =  $this->m_departement->get();
+        $this->render('backend/departement/departement-data', $data);
     }
 
     public function create()
     {
-        $data['title'] = 'Create Jabatan';
-        $data['departement_data'] = $this->m_departement->get();
-        $this->render('backend/jabatan/jabatan-create', $data);
+        $data['title'] = 'Create departement';
+        $this->render('backend/departement/departement-create', $data);
     }
 
     public function save()
     {
         $config = array(
             array(
-                'field' => 'namajabatan',
-                'label' => 'Nama Jabatan',
+                'field' => 'namadepartement',
+                'label' => 'Nama departement',
                 'rules' => 'required'
             ),
             array(
-                'field' => 'deskripsijabatan',
-                'label' => 'Deskripsi Jabatan',
+                'field' => 'deskripsidepartement',
+                'label' => 'Deskripsi departement',
                 'rules' => 'required'
             ),
         );
@@ -52,20 +50,19 @@ class C_jabatan extends MY_Controller
             redirect($_SERVER['HTTP_REFERER']);
         } else {
             $data = [
-                'namajabatan'      => $this->post('namajabatan'),
-                'deskripsijabatan' => $this->post('deskripsijabatan'),
-                'departement_id'   => $this->post('departement_id'),
+                'namadepartement' => $this->post('namadepartement'),
+                'deskripsidepartement' => $this->post('deskripsidepartement'),
 
             ];
             $this->db->trans_start();
-            $insert = $this->m_jabatan->insert($data);
+            $insert = $this->m_departement->insert($data);
             $this->db->trans_complete();
             if ($this->db->trans_status() === FALSE) {
                 $this->flashmsg('Gagal menambah data', 'danger');
-                redirect('jabatan');
+                redirect('departement');
             } else {
                 $this->flashmsg('Sukses menambah data', 'success');
-                redirect('jabatan');
+                redirect('departement');
             }
         }
     }
@@ -73,14 +70,14 @@ class C_jabatan extends MY_Controller
     public function destroy($id)
     {
         $this->db->trans_start();
-        $delete = $this->m_jabatan->delete($id);
+        $delete = $this->m_departement->delete($id);
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
             $this->flashmsg('Gagal menghapus data', 'danger');
-            redirect('jabatan');
+            redirect('departement');
         } else {
             $this->flashmsg('Sukses menghapus data', 'success');
-            redirect('jabatan');
+            redirect('departement');
         }
     }
 }

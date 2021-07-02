@@ -17,12 +17,17 @@ $route['jabatan']                        = 'backend/c_jabatan/index';
 $route['create-jbt']                     = 'backend/c_jabatan/create';
 $route['jabatan/save']                   = 'backend/c_jabatan/save';
 $route['jabatan/destroy']                = 'backend/c_jabatan/destroy';
+// Routes Departement
+$route['departement']                    = 'backend/c_departement/index';
+$route['create-dpt']                     = 'backend/c_departement/create';
+$route['departement/save']               = 'backend/c_departement/save';
+
 // Routes pegawai
 $route['pegawai']                        = 'backend/c_pegawai/index';
 $route['create-pgw']                     = 'backend/c_pegawai/create';
 $route['pegawai/save']                   = 'backend/c_pegawai/save';
 $route['pegawai/destroy']                = 'backend/c_pegawai/destroy';
-// routes Jabatan
+// routes Kriteria
 $route['kriteria']                        = 'backend/c_kriteria/index';
 $route['create-krt']                      = 'backend/c_kriteria/create';
 $route['kriteria/save']                   = 'backend/c_kriteria/save';

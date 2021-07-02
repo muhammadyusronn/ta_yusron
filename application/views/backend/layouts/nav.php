@@ -168,6 +168,18 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+                        <i class="ti-desktop menu-icon"></i>
+                        <span class="menu-title">Departement</span>
+                        <i class="fas fa-sort-down menu-arrow"></i></a>
+                    <div class="submenu">
+                        <ul class="submenu-item">
+                            <li class="nav-item"><a class="nav-link" href="<?= base_url('create-dpt') ?>">Tambah Departement</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?= base_url('departement') ?>">Data Departement</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="ti-support menu-icon"></i>
                         <span class="menu-title">Jabatan</span>
                         <i class="fas fa-sort-down menu-arrow"></i></a>
