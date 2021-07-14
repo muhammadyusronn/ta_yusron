@@ -12,7 +12,7 @@ class M_pegawai extends MY_model
     {
         $this->db->select('*');
         $this->db->from('pegawai');
-        $this->db->join('jabatan', 'pegawai.jabatan = jabatan.id_jabatan');
+        $this->db->join('departement', 'pegawai.departement_id = departement.id_departement');
         $query = $this->db->get()->result();
         return $query;
     }

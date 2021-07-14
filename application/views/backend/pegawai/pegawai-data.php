@@ -15,7 +15,7 @@
 
                                             <th>NIP</th>
                                             <th>Nama Pegawai</th>
-                                            <th>Jabatan</th>
+                                            <th>Departement</th>
                                             <th>Kontak</th>
                                             <th>Actions</th>
                                         </tr>
@@ -27,7 +27,7 @@
                                             <tr>
                                                 <td><?= $i->nip ?></td>
                                                 <td><?= $i->nama ?></td>
-                                                <td><?= $i->namajabatan ?></td>
+                                                <td><?= $i->namadepartement ?></td>
                                                 <td><?= $i->kontak ?></td>
                                                 <td>
                                                     <a class="btn btn-inverse-primary btn-fw" title="Detail"><i class="fas fa-eye"></i></a>

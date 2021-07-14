@@ -7,6 +7,7 @@ class Welcome extends MY_controller
 	public function index()
 	{
 		$data['title'] = 'Dashboard';
-		$this->render('backend/home', $data);
+		// $this->load->view('welcome_message');
+		$this->render('welcome_message', $data);
 	}
 }

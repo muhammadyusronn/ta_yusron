@@ -14,8 +14,11 @@
     <script defer src="<?= base_url('assets/node_modules/@fortawesome/fontawesome-free/js/solid.js') ?>"></script>
     <script defer src="<?= base_url('assets/node_modules/@fortawesome/fontawesome-free/js/fontawesome.js') ?>"></script>
     <link rel="stylesheet" href="<?= base_url('assets/vendors/ti-icons/css/themify-icons.css') ?>">
-    <link rel="stylesheet" href=".<?= base_url('./../vendors/css/vendor.bundle.base.css') ?>">
+    <link rel="stylesheet" href=".<?= base_url('assets/vendors/css/vendor.bundle.base.css') ?>">
     <!-- endinject -->
+    <!-- Select 2 -->
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
     <!-- Sweet alert -->
     <link rel="stylesheet" href="<?= base_url('assets/sweetalert/sweetalert2.min.css') ?>">
     <!-- Data tables -->

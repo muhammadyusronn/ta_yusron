@@ -18,11 +18,11 @@
                                         <input id="nama" class="form-control" name="nama" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label for="jabatan">Jabatan Pegawai</label>
-                                        <select id="jabatan" class="form-control" name="jabatan">
-                                            <option disabled>Pilih Jabatan</option>
-                                            <?php foreach ($jabatan_data as $i) : ?>
-                                                <option value="<?= $i->id_jabatan ?>"><?= $i->namajabatan ?></option>
+                                        <label for="departement_id">Departement</label>
+                                        <select id="departement_id" class="form-control" name="departement_id">
+                                            <option disabled>Pilih Departement</option>
+                                            <?php foreach ($data_departement as $i) : ?>
+                                                <option value="<?= $i->id_departement ?>"><?= $i->namadepartement ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>

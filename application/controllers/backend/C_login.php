@@ -26,14 +26,13 @@ class C_login extends MY_Controller
             $this->flashmsg('Data tidak ditemukan', 'danger');
             redirect('login');
         } else {
-            if ($cek_user[0]->level == 'Admin' || $cek_user[0]->level == 'Pimpinan') {
+            if ($cek_user[0]->level == 'Admin' || $cek_user[0]->level == 'Pimpinan' || $cek_user[0]->level == 'Penilai') {
                 if (password_verify($this->post('password'), $cek_user[0]->password)) {
                     $data = [
                         'nip'    =>    $nip,
                         'password'    => $cek_user[0]->password,    //ganti pake enkripsi baru
                     ];
                     $user = $this->m_user->get($data);
-                    $this->dump($user);
                     if (count($user) == 1) {
                         $resource = [
                             'id_user'    => $user[0]->id_user,
@@ -70,7 +69,11 @@ class C_login extends MY_Controller
                 if ($this->data['info']['status'] == 'ok') {
                     $this->flashmsg($this->data['message'], 'success');
                     $this->session->set_userdata(['token' => $this->data['resess']]);
-                    redirect('dash');
+                    if ($this->data['resess']['level'] == 'Penilai') {
+                        redirect('evaluasi');
+                    } else {
+                        redirect('dash');
+                    }
                 } else {
                     $this->flashmsg($this->data['message'], 'danger');
                 }

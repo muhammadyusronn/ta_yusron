@@ -13,10 +13,10 @@ $route['create-usr']                      = 'backend/c_user/create';
 $route['user/save']                       = 'backend/c_user/save';
 $route['user/destroy']                    = 'backend/c_user/destroy';
 // routes Jabatan
-$route['jabatan']                        = 'backend/c_jabatan/index';
-$route['create-jbt']                     = 'backend/c_jabatan/create';
-$route['jabatan/save']                   = 'backend/c_jabatan/save';
-$route['jabatan/destroy']                = 'backend/c_jabatan/destroy';
+$route['kategori']                        = 'backend/c_kategori/index';
+$route['create-ktg']                      = 'backend/c_kategori/create';
+$route['kategori/save']                   = 'backend/c_kategori/save';
+$route['kategori/destroy']                = 'backend/c_kategori/destroy';
 // Routes Departement
 $route['departement']                    = 'backend/c_departement/index';
 $route['create-dpt']                     = 'backend/c_departement/create';
@@ -32,6 +32,13 @@ $route['kriteria']                        = 'backend/c_kriteria/index';
 $route['create-krt']                      = 'backend/c_kriteria/create';
 $route['kriteria/save']                   = 'backend/c_kriteria/save';
 $route['kriteria/destroy']                = 'backend/c_kriteria/destroy';
+// routes evaluasi
+$route['evaluasi']                        = 'backend/c_evaluasi/index';
+$route['evaluasi/save']                   = 'backend/c_evaluasi/save';
+$route['evaluasi/destroy']                = 'backend/c_evaluasi/destroy';
+
+// Errors Handling
+$route['404-error'] = 'backend/c_errors/not_found';
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

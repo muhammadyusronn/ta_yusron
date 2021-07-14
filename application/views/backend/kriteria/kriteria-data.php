@@ -12,6 +12,7 @@
                                 <table id="order-listing" class="table">
                                     <thead>
                                         <tr>
+                                            <th>Kategori</th>
                                             <th>Nama Kriteria</th>
                                             <th>Nilai</th>
                                             <th>Bobot</th>
@@ -22,8 +23,9 @@
                                     <tbody>
                                         <?php
                                         $no = 0;
-                                        foreach ($kriteria_data as $i) : $no++; ?>
+                                        foreach ($data_kriteria as $i) : $no++; ?>
                                             <tr>
+                                                <td><?= $i->namakategori ?></td>
                                                 <td><?= $i->kriteria_nama ?></td>
                                                 <td><?= $i->kriteria_nilai ?></td>
                                                 <td><?= $i->kriteria_bobot ?></td>

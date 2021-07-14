@@ -58,25 +58,25 @@
       }
     });
     // Form Validation for jabatan
-    $("#jabatan-create").validate({
+    $("#kategori-create").validate({
       rules: {
-        namajabatan: {
+        namakategori: {
           required: true,
           minlength: 2
         },
-        deskripsijabatan:{
+        deksripsikategori:{
           required: true,
           minlength: 2
         }
       },
       messages: {
-        namajabatan: {
-          required: "Masukan Nama Jabatan",
-          minlength: "Nama Jabatan minimal 2 karakter"
+        namakategori: {
+          required: "Masukan Nama Kategori",
+          minlength: "Nama Kategori minimal 2 karakter"
         },
-        deskripsijabatan: {
-          required: "Masukan Deksripsi Jabatan",
-          minlength: "Deksripsi Jabatan minimal 2 karakter"
+        deksripsikategori: {
+          required: "Masukan Deksripsi Kategori",
+          minlength: "Deksripsi Kategori minimal 2 karakter"
         },
       },
       errorPlacement: function(label, element) {

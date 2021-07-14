@@ -10,6 +10,15 @@
                             <form class="cmxform" id="kriteria-create" method="post" action="<?= base_url('kriteria/save') ?>">
                                 <fieldset>
                                     <div class="form-group">
+                                        <label for="kategori_id">Kategori Kriteria</label>
+                                        <select id="kategori_id" class="form-control" name="kategori_id">
+                                            <option disabled>Pilih Kategori</option>
+                                            <?php foreach ($data_kategori as $i) : ?>
+                                                <option value="<?= $i->id_kategori ?>"><?= $i->namakategori ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="kriteria_nama">Nama Kriteria</label>
                                         <input id="kriteria_nama" class="form-control" name="kriteria_nama" type="text">
                                     </div>

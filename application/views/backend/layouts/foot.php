@@ -2,7 +2,6 @@
 <footer class="footer">
     <div class="w-100 clearfix">
         <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a href="https://www.github.com/muhammadyusronn" target="_blank">Muhammad Yusron Hartoyo</a>. All rights reserved.</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Muhammad Yusron Hartoyo & made with <i class="ti-heart text-danger ml-1"></i></span>
     </div>
 </footer>
 <!-- partial -->
@@ -12,7 +11,6 @@
 <!-- page-body-wrapper ends -->
 </div>
 <!-- container-scroller -->
-
 <!-- plugins:js -->
 <script src="<?= base_url('assets/vendors/js/vendor.bundle.base.js') ?>"></script>
 <!-- endinject -->
@@ -28,7 +26,6 @@
 <!-- endinject -->
 <!-- Custom js for this page-->
 <script src="<?= base_url('assets/js/dashboard.js') ?>"></script>
-<script src="<?= base_url('assets/js/todolist.js') ?>"></script>
 <!-- End custom js for this page-->
 <!-- Data tables -->
 <script src="<?= base_url('assets/vendors/datatables.net/jquery.dataTables.js') ?>"></script>
@@ -44,6 +41,11 @@
 <!-- Sweet Alert -->
 <script src="<?= base_url('assets/sweetalert/sweetalert2.min.js') ?>"></script>
 <script src="<?= base_url('assets/sweetalert/sweetalert.js') ?>"></script>
+<!-- Select 2 -->
+<script src="<?= base_url('assets/') ?>vendors/typeahead.js/typeahead.bundle.min.js"></script>
+<script src="<?= base_url('assets/') ?>vendors/select2/select2.min.js"></script>
+<script src="<?= base_url('assets') ?>/js/typeahead.js"></script>
+<script src="<?= base_url('assets') ?>/js/select2.js"></script>
 <!-- Jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- End Sweet Alert -->

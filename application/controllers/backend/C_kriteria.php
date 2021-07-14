@@ -6,6 +6,7 @@ class C_kriteria extends MY_Controller
     {
         parent::__construct();
         $this->load->model('m_kriteria');
+        $this->load->model('m_kategori');
         $this->data['token'] = $this->session->userdata('token');
         if (!isset($this->data['token'])) {
             $this->flashmsg('Anda harus login untuk mengakses halaman tersebut', 'warning');
@@ -20,12 +21,15 @@ class C_kriteria extends MY_Controller
     public function index()
     {
         $data['title'] = 'Data Kriteria';
-        $data['kriteria_data'] =  $this->m_kriteria->get();
+        $tables = ['kategori'];
+        $cond = ['kriteria.kategori_id = kategori.id_kategori'];
+        $data['data_kriteria'] =  $this->m_kriteria->get_data_join($tables, $cond);
         $this->render('backend/kriteria/kriteria-data', $data);
     }
 
     public function create()
     {
+        $data['data_kategori'] = $this->m_kategori->get_by_order('namakategori', 'ASC');
         $data['title'] = 'Create kriteria';
         $this->render('backend/kriteria/kriteria-create', $data);
     }
@@ -55,10 +59,11 @@ class C_kriteria extends MY_Controller
             redirect($_SERVER['HTTP_REFERER']);
         } else {
             $data = [
-                'kriteria_nama' => $this->post('kriteria_nama'),
+                'kriteria_nama'  => $this->post('kriteria_nama'),
                 'kriteria_nilai' => $this->post('kriteria_nilai'),
                 'kriteria_bobot' => $this->post('kriteria_bobot'),
                 'kriteria_sifat' => $this->post('kriteria_sifat'),
+                'kategori_id'    => $this->post('kategori_id'),
 
             ];
             $this->db->trans_start();

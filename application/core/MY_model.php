@@ -159,7 +159,7 @@ class MY_Model extends CI_Model
         return $query->result();
     }
 
-    public function getDataJoin($tables, $jcond)
+    public function get_data_join($tables, $jcond)
     {
         $this->db->select('*');
         for ($i = 0; $i < count($tables); $i++)

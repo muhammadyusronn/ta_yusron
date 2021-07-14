@@ -6,7 +6,7 @@ class C_pegawai extends MY_Controller
     {
         parent::__construct();
         $this->load->model('m_pegawai');
-        $this->load->model('m_jabatan');
+        $this->load->model('m_departement');
         $this->data['token'] = $this->session->userdata('token');
         if (!isset($this->data['token'])) {
             $this->flashmsg('Anda harus login untuk mengakses halaman tersebut', 'warning');
@@ -28,7 +28,7 @@ class C_pegawai extends MY_Controller
     public function create()
     {
         $data['title'] = 'Create Pegawai';
-        $data['jabatan_data'] =  $this->m_jabatan->get();
+        $data['data_departement'] =  $this->m_departement->get();
         $this->render('backend/pegawai/pegawai-create', $data);
     }
 
@@ -46,8 +46,8 @@ class C_pegawai extends MY_Controller
                 'rules' => 'required'
             ),
             array(
-                'field' => 'jabatan',
-                'label' => 'Jabatan Pegawai ',
+                'field' => 'departement_id',
+                'label' => 'Departement Pegawai ',
                 'rules' => 'required'
             ),
             array(
@@ -64,7 +64,7 @@ class C_pegawai extends MY_Controller
             $data = [
                 'nip' => $this->post('nip'),
                 'nama' => $this->post('nama'),
-                'jabatan' => $this->post('jabatan'),
+                'departement_id' => $this->post('departement_id'),
                 'kontak' => $this->post('kontak'),
 
             ];
