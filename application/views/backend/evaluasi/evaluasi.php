@@ -1,7 +1,13 @@
 		<!-- partial -->
+		<?php
+		$current_year = date('Y');
+		$current_month = date('m');
+		$arrNamaBulan = array("01" => "Januari", "02" => "Februari", "03" => "Maret", "04" => "April", "05" => "Mei", "06" => "Juni", "07" => "Juli", "08" => "Agustus", "09" => "September", "10" => "Oktober", "11" => "November", "12" => "Desember");
+		?>
 		<div class="container-fluid page-body-wrapper">
 			<div class="main-panel">
 				<div class="content-wrapper">
+					<?php echo $this->session->flashdata('msg'); ?>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
@@ -38,19 +44,43 @@
 											</ul>
 											<div class="tab-content tab-content-custom-pill" id="pills-tabContent-custom">
 												<div class="tab-pane fade show active" id="data-penilaian" role="tabpanel" aria-labelledby="pills-home-tab-custom">
-													<div class="d-flex mb-4">
-														<img src="<?= base_url('assets/') ?>images/samples/300x300/12.jpg" class="w-25 h-100 rounded" alt="sample image">
-														<img src="<?= base_url('assets/') ?>images/samples/300x300/1.jpg" class="w-25 h-100 ml-4 rounded" alt="sample image">
-														<img src="<?= base_url('assets/') ?>images/samples/300x300/2.jpg" class="w-25 h-100 ml-4 rounded" alt="sample image">
-													</div>
-													<p>
-														I'm not the monster he wants me to be. So I'm neither man nor beast. I'm something new entirely. With
-														my own set of rules. I'm Dexter. Boo. Only you could make those words cute. I'm thinking two circus clowns dancing. You?
-													</p>
-													<p>
-														Under normal circumstances, I'd take that as a compliment. Tell him time is of the essence. I'm really more
-														an apartment person. Finding a needle in a haystack isn't hard when every straw is computerized.
-													</p>
+													<form class="cmxform" id="kriteria-create" method="post" action="<?= base_url('evaluasi/result'); ?>">
+														<fieldset>
+															<div class="form-group">
+																<label for="periode_bulan">Periode Bulan</label>
+																<select id="periode_bulan" class="form-control" name="periode_bulan" required>
+																	<option selected disabled>Pilih periode bulan</option>
+																	<?php for ($i = 1; $i <= 12; $i++) { ?>
+																		<option value="<?= $i ?>"><?php if ($i > 9) {
+																										echo $arrNamaBulan[$i];
+																									} else {
+																										echo $arrNamaBulan['0' . $i];
+																									} ?></option>
+
+																	<?php } ?>
+																</select>
+															</div>
+															<div class="form-group">
+																<label for="periode_tahun">Periode Tahun</label>
+																<select id="periode_tahun" class="form-control" name="periode_tahun">
+																	<option disabled selected>Pilih Periode Tahun</option>
+																	<?php for ($i = $current_year - 5; $i <= $current_year + 5; $i++) { ?>
+																		<option value="<?= $i ?>"><?= $i ?></option>
+																	<?php } ?>
+																</select>
+															</div>
+															<div class="form-group">
+																<label for="departement_id">Departemen</label>
+																<select id="departement_id" class="form-control" name="departement_id">
+																	<option value="0" selected>Semua Departemen</option>
+																	<?php foreach ($data_departement as $x) : ?>
+																		<option value="<?= $x->id_departement ?>"><?= $x->namadepartement ?></option>
+																	<?php endforeach ?>
+																</select>
+															</div>
+															<input class="btn btn-primary" type="submit" value="LIHAT HASIL EVALUASI">
+														</fieldset>
+													</form>
 												</div>
 												<div class="tab-pane fade" id="penilaian" role="tabpanel" aria-labelledby="pills-profile-tab-custom">
 													<div class="media">
@@ -59,11 +89,6 @@
 																<div class="col-lg-12">
 																	<form class="cmxform" id="jabatan-create" method="post" action="<?= base_url('evaluasi/save') ?>">
 																		<fieldset>
-																			<?php
-																			$current_year = date('Y');
-																			$current_month = date('m');
-																			$arrNamaBulan = array("01" => "Januari", "02" => "Februari", "03" => "Maret", "04" => "April", "05" => "Mei", "06" => "Juni", "07" => "Juli", "08" => "Agustus", "09" => "September", "10" => "Oktober", "11" => "November", "12" => "Desember");
-																			?>
 																			<div class="form-group row">
 																				<div class="col">
 																					<label for="periode_bulan">Priode Bulan</label>

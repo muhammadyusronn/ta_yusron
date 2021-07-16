@@ -2,10 +2,13 @@
     <nav class="navbar top-navbar col-lg-12 col-12 p-0">
         <div class="container">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo-mini" href="<?= base_url('dash') ?>"></a>
-                <a class="navbar-brand brand-logo" href="<?= base_url('dash') ?>">Rumah Sakit Dr. Noesmir Baturaja</a>
-                <!-- <a class="navbar-brand brand-logo" href="<?= base_url('dash') ?>"><img src="https://www.bootstrapdash.com/demo/justdo/template/images/logo-white.svg" alt="logo" /></a> -->
-                <!-- <a class="navbar-brand brand-logo-mini" href="<?= base_url('dash') ?>"><img style="width: 40px; height: 60px;" src="https://1.bp.blogspot.com/-6GAmbNZkec0/Vx5AUT0vdGI/AAAAAAAAXHw/5NBaJ_u9Q58ffr8IgY6OZDfJv-j66B39QCLcB/s1600/Logo%2BTNI%2BAD.png" alt="logo" /></a> -->
+                <?php if ($this->data['token']['level'] == 'Admin') { ?>
+                    <a class="navbar-brand brand-logo-mini" href="<?= base_url('dash') ?>"></a>
+                    <a class="navbar-brand brand-logo" href="<?= base_url('dash') ?>">Rumah Sakit Dr. Noesmir Baturaja</a>
+                <?php } else { ?>
+                    <a class="navbar-brand brand-logo-mini" href="<?= base_url('evaluasi') ?>"></a>
+                    <a class="navbar-brand brand-logo" href="<?= base_url('evaluasi') ?>">Rumah Sakit Dr. Noesmir Baturaja</a>
+                <?php } ?>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <ul class="navbar-nav navbar-nav-right">

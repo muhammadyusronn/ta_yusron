@@ -34,6 +34,7 @@ $route['kriteria/save']                   = 'backend/c_kriteria/save';
 $route['kriteria/destroy']                = 'backend/c_kriteria/destroy';
 // routes evaluasi
 $route['evaluasi']                        = 'backend/c_evaluasi/index';
+$route['evaluasi/result']                 = 'backend/c_evaluasi/result';
 $route['evaluasi/save']                   = 'backend/c_evaluasi/save';
 $route['evaluasi/destroy']                = 'backend/c_evaluasi/destroy';
 
@@ -41,5 +42,5 @@ $route['evaluasi/destroy']                = 'backend/c_evaluasi/destroy';
 $route['404-error'] = 'backend/c_errors/not_found';
 
 $route['default_controller'] = 'welcome';
-$route['404_override'] = '';
+$route['404_override'] = 'backend/c_errors/not_found';
 $route['translate_uri_dashes'] = FALSE;
