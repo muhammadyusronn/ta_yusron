@@ -69,7 +69,7 @@
 																	<?php } ?>
 																</select>
 															</div>
-															<div class="form-group">
+															<!-- <div class="form-group">
 																<label for="departement_id">Departemen</label>
 																<select id="departement_id" class="form-control" name="departement_id">
 																	<option value="0" selected>Semua Departemen</option>
@@ -77,7 +77,7 @@
 																		<option value="<?= $x->id_departement ?>"><?= $x->namadepartement ?></option>
 																	<?php endforeach ?>
 																</select>
-															</div>
+															</div> -->
 															<input class="btn btn-primary" type="submit" value="LIHAT HASIL EVALUASI">
 														</fieldset>
 													</form>
@@ -103,14 +103,14 @@
 																			<div class="form-group">
 
 																			</div>
-																			<div class="form-group">
+																			<!-- <div class="form-group">
 																				<label for="departement_id">Departemen</label>
 																				<select id="departement_id" class="form-control" name="departement_id">
 																					<?php foreach ($data_departement as $i) : ?>
 																						<option value="<?= $i->id_departement ?>"><?= $i->namadepartement; ?></option>
 																					<?php endforeach; ?>
 																				</select>
-																			</div>
+																			</div> -->
 																			<div class="form-group">
 																				<label for="pegawai_id">Nama Pegawai</label>
 																				<select id="pegawai_id" class="form-control" name="pegawai_id">

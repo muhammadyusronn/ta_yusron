@@ -22,8 +22,14 @@ class C_evaluasi extends MY_Controller
 
     public function index()
     {
+        $month = date('m');
+        $year = date('Y');
+        $cond = [
+            'periode_bulan' => $month,
+            'periode_tahun'  => $year
+        ];
         $data['data_departement'] = $this->m_departement->get_by_order('namadepartement', 'ASC');
-        $data['data_pegawai'] = $this->m_pegawai->get_by_order('nama', 'ASC');
+        $data['data_pegawai'] = $this->m_pegawai->get_alt($cond);
         $data['data_kriteria'] = $this->m_kriteria->get_data_join(['kategori'], ['kategori.id_kategori = kriteria.kategori_id']);
         $data['title'] = 'Evaluasi Kinerja';
         $this->render('backend/evaluasi/evaluasi', $data);
@@ -69,18 +75,35 @@ class C_evaluasi extends MY_Controller
 
     public function result()
     {
+        $cond = [
+            'periode_bulan' => $this->POST('periode_bulan'),
+            'periode_tahun' =>  $this->POST('periode_tahun')
+        ];
         $kriteria = $this->kriteria();
-        $nilai = $this->nilai();
-        $alternatif = $this->alternatif();
-        $data_array = $this->data_array($alternatif, $kriteria, $nilai);
+        $nilai = $this->nilai($cond);
+        if (count($nilai) == 0) {
+            $day = $this->POST('periode_bulan');
+            if ($day > 9) {
+                $days = $day;
+            } else {
+                $days = '0' . $day;
+            }
+            $data['message'] = 'Tidak ada evaluasi pada bulan ' . $this->arr_bulan($days) . ' tahun ' . $this->POST('periode_tahun');
+            $data['title'] = 'Hasil Evaluasi Kinerja';
+            $this->render('backend/evaluasi/evaluasi-notfound', $data);
+        } else {
+            $alternatif = $this->alternatif();
+            $data_array = $this->data_array($alternatif, $kriteria, $nilai);
 
-        $normalisasi = $this->normalisasi($alternatif, $kriteria, $data_array);
-        $preferensi = $this->preferensi($alternatif, $kriteria, $normalisasi);
-        @$sum_arr = $this->sum_arr($alternatif, $kriteria, $preferensi);
-        $data['data_hasilpenilaian'] = $sum_arr;
-        $data['data_pegawai'] = $this->m_pegawai->get_data();
-        $data['title'] = 'Hasil Evaluasi Kinerja';
-        $this->render('backend/evaluasi/evaluasi-hasil', $data);
+            $normalisasi = $this->normalisasi($alternatif, $kriteria, $data_array);
+            $preferensi = $this->preferensi($alternatif, $kriteria, $normalisasi);
+            @$sum_arr = $this->sum_arr($alternatif, $kriteria, $preferensi);
+            $data['data_hasilpenilaian'] = $sum_arr;
+
+            $data['data_pegawai'] = $this->m_pegawai->get_data();
+            $data['title'] = 'Hasil Evaluasi Kinerja';
+            $this->render('backend/evaluasi/evaluasi-hasil', $data);
+        }
     }
 
     private function kriteria()
@@ -88,9 +111,9 @@ class C_evaluasi extends MY_Controller
         return $this->m_kriteria->get_kriteria();
     }
 
-    private function nilai()
+    private function nilai($cond = '')
     {
-        return $this->m_penilaian->get_penilaian();
+        return $this->m_penilaian->get_penilaian($cond);
     }
 
     private function alternatif()
