@@ -1,13 +1,10 @@
-###################
-Sistem Pendukung Keputusan Evaluasi Kinerja Pegawai Menggunakan Metode Simple Additive Weighting dan SMS Gateway
-###################
+#Sistem Pendukung Keputusan Evaluasi Kinerja Pegawai Menggunakan Metode Simple Additive Weighting dan SMS Gateway
+
 
 Sistem Pendukung Keputusan ini dikembangkan untuk membantu sebuah instansi atau perusahaan
 melakukan evaluasi kinerja pegawai yang dilaksanakan dalam periode setiap bulan
 
-*******************
-Fitur :
-*******************
+##Fitur :
 
 <ul>
     <li>CRUD Data User</li>
@@ -20,15 +17,11 @@ Fitur :
     <li>Broadcast Hasil Evaluasi Kinerja ke Seluruh Pegawai</li>
 </ul>
 
-*******************
-Kebutuhan Server
-*******************
+##Kebutuhan Server
 
 Direkomendasikan menggunakan PHP versi 5.6 ke atas
 
-************
-Cara Installasi
-************
+##Cara Installasi
 
 <ul>
     <li>
@@ -41,9 +34,8 @@ Cara Installasi
     <li>Jika sudah selesai anda bisa mengakses dengan cara http://localhost/nama_foldernya/</li>
 </ul>
 
-*******
-Akun
-*******
+##Akun
+
 <table>
     <tr>
         <td>NIP</td>
