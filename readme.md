@@ -33,10 +33,10 @@ Cara Installasi
 <ul>
     <li>
         Silahkan Clone atau Download Repo ini terkebih dahulu. Untuk tutorial clone repository
-        bisa dilihat `DISINI <https://www.youtube.com/watch?v=bz9GISfttn8>`_
+        bisa dilihat [DISINI] (https://www.youtube.com/watch?v=bz9GISfttn8)
     </li>
     <li>Import Database ke web server anda atau xampp dan namai dengan tugasakhir_yusron. Untuk cara import database bisa 
-    dilihat `DISINI <https://www.youtube.com/watch?v=ivR4wgddvsk>`_</li>
+    dilihat [DISINI] (https://www.youtube.com/watch?v=ivR4wgddvsk)</li>
     <li>Jalankan composer intall pada terminal anda!</li>
     <li>Jika sudah selesai anda bisa mengakses dengan cara http://localhost/nama_foldernya/</li>
 </ul>
