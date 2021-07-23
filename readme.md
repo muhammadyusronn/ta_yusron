@@ -33,10 +33,10 @@ Cara Installasi
 <ul>
     <li>
         Silahkan Clone atau Download Repo ini terkebih dahulu. Untuk tutorial clone repository
-        bisa dilihat [DISINI] (https://www.youtube.com/watch?v=bz9GISfttn8)
+        bisa dilihat [DISINI](https://www.youtube.com/watch?v=bz9GISfttn8)
     </li>
     <li>Import Database ke web server anda atau xampp dan namai dengan tugasakhir_yusron. Untuk cara import database bisa 
-    dilihat [DISINI] (https://www.youtube.com/watch?v=ivR4wgddvsk)</li>
+    dilihat [DISINI](https://www.youtube.com/watch?v=ivR4wgddvsk)</li>
     <li>Jalankan composer intall pada terminal anda!</li>
     <li>Jika sudah selesai anda bisa mengakses dengan cara http://localhost/nama_foldernya/</li>
 </ul>
@@ -44,19 +44,20 @@ Cara Installasi
 *******
 Akun
 *******
-
-<tr>
-    <td>NIP</td>
-    <td>Password</td>
-    <td>Level</td>
-</tr>
-<tr>
-    <td>1111</td>
-    <td>1111</td>
-    <td>Admin</td>
-</tr>
-<tr>
-    <td>2222</td>
-    <td>2222</td>
-    <td>Penilai</td>
-</tr>
+<table>
+    <tr>
+        <td>NIP</td>
+        <td>Password</td>
+        <td>Level</td>
+    </tr>
+    <tr>
+        <td>1111</td>
+        <td>1111</td>
+        <td>Admin</td>
+    </tr>
+    <tr>
+        <td>2222</td>
+        <td>2222</td>
+        <td>Penilai</td>
+    </tr>
+</table>
