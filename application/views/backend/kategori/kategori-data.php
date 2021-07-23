@@ -26,7 +26,7 @@
                                                 <td><?= $i->namakategori ?></td>
                                                 <td><?= $i->deskripsikategori ?></td>
                                                 <td>
-                                                    <a class="btn btn-inverse-primary btn-fw" title="Detail"><i class="fas fa-eye"></i></a>
+                                                    <a class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
                                                     <a href="<?= base_url('backend/c_kategori/destroy/' . $i->id_kategori); ?>" class="btn btn-inverse-danger btn-fw tombol-hapus" title="HAPUS"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
