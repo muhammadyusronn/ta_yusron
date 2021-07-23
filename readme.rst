@@ -1,70 +1,62 @@
 ###################
-What is CodeIgniter
+Sistem Pendukung Keputusan Evaluasi Kinerja Pegawai Menggunakan Metode Simple Additive Weighting dan SMS Gateway
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Sistem Pendukung Keputusan ini dikembangkan untuk membantu sebuah instansi atau perusahaan
+melakukan evaluasi kinerja pegawai yang dilaksanakan dalam periode setiap bulan
 
 *******************
-Release Information
+Fitur :
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
-
-**************************
-Changelog and New Features
-**************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+<ul>
+    <li>CRUD Data User</li>
+    <li>CRUD Data Departement</li>
+    <li>CRUD Data Pegawai</li>
+    <li>CRUD Data Kategori Kriteria</li>
+    <li>CRUD Data Kriteria</li>
+    <li>Evaluasi Kinerja Pegawai</li>
+    <li>Informasi Hasil Evaluasi Kinerja Pegawai</li>
+    <li>Broadcast Hasil Evaluasi Kinerja ke Seluruh Pegawai</li>
+</ul>
 
 *******************
-Server Requirements
+Kebutuhan Server
 *******************
 
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Direkomendasikan menggunakan PHP versi 5.6 ke atas
 
 ************
-Installation
+Cara Installasi
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+<ul>
+    <li>
+        Silahkan Clone atau Download Repo ini terkebih dahulu. Untuk tutorial clone repository
+        bisa dilihat `DISINI <https://www.youtube.com/watch?v=bz9GISfttn8>`_
+    </li>
+    <li>Import Database ke web server anda atau xampp dan namai dengan tugasakhir_yusron. Untuk cara import database bisa 
+    dilihat `DISINI <https://www.youtube.com/watch?v=ivR4wgddvsk>`_</li>
+    <li>Jalankan composer intall pada terminal anda!</li>
+    <li>Jika sudah selesai anda bisa mengakses dengan cara http://localhost/nama_foldernya/</li>
+</ul>
 
 *******
-License
+Akun
 *******
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+<tr>
+    <td>NIP</td>
+    <td>Password</td>
+    <td>Level</td>
+</tr>
+<tr>
+    <td>1111</td>
+    <td>1111</td>
+    <td>Admin</td>
+</tr>
+<tr>
+    <td>2222</td>
+    <td>2222</td>
+    <td>Penilai</td>
+</tr>
