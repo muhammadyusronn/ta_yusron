@@ -2,6 +2,7 @@
 <div class="container-fluid page-body-wrapper">
     <div class="main-panel">
         <div class="content-wrapper">
+            <a href="<?= base_url('create-usr') ?>" class="btn btn-primary mb-2"><i class="fas fa-plus"></i> Tambah Data</a>
             <?php echo $this->session->flashdata('msg'); ?>
             <div class="card">
                 <div class="card-body">
@@ -29,7 +30,7 @@
                                                 <td><?= $i->kontak ?></td>
                                                 <td><?= $i->level ?></td>
                                                 <td>
-                                                    <a class="btn btn-inverse-primary btn-fw" title="Detail"><i class="fas fa-eye"></i></a>
+                                                    <a class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
                                                     <a href="<?= base_url('backend/c_user/destroy/' . $i->id_user); ?>" class="btn btn-inverse-danger btn-fw tombol-hapus" title="HAPUS"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>

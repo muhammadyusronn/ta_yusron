@@ -87,81 +87,76 @@
 														<div class="media-body">
 															<div class="row">
 																<div class="col-lg-12">
-																	<form class="cmxform" id="jabatan-create" method="post" action="<?= base_url('evaluasi/save') ?>">
-																		<fieldset>
-																			<div class="form-group row">
-																				<div class="col">
-																					<label for="periode_bulan">Priode Bulan</label>
-																					<input id="periode_bulan_text" value="<?= $arrNamaBulan[$current_month] ?>" class="form-control" name="periode_bulan_text" readonly>
-																					<input type="hidden" id="periode_bulan" value="<?= $current_month ?>" class="form-control" name="periode_bulan" readonly>
+																	<?php if (count($data_pegawai) == 0) { ?>
+																		<h3>Anda sudah melakukan evaluasi periode bulan <?= $arrNamaBulan[$current_month] ?> tahun <?= $current_year ?></h3>
+																		<a href="<?= base_url() ?>" class="btn btn-primary"><i class="fas fa-envelope"></i> Broadcast Hasil Evaluasi</a>
+																	<?php } else {
+																	?>
+																		<form class="cmxform" id="jabatan-create" method="post" action="<?= base_url('evaluasi/save') ?>">
+																			<fieldset>
+																				<div class="form-group row">
+																					<div class="col">
+																						<label for="periode_bulan">Priode Bulan</label>
+																						<input id="periode_bulan_text" value="<?= $arrNamaBulan[$current_month] ?>" class="form-control" name="periode_bulan_text" readonly>
+																						<input type="hidden" id="periode_bulan" value="<?= $current_month ?>" class="form-control" name="periode_bulan" readonly>
+																					</div>
+																					<div class="col">
+																						<label for="periode_tahun">Priode Tahun</label>
+																						<input id="periode_tahun" value="<?= $current_year ?>" class="form-control" name="periode_tahun" readonly>
+																					</div>
 																				</div>
-																				<div class="col">
-																					<label for="periode_tahun">Priode Tahun</label>
-																					<input id="periode_tahun" value="<?= $current_year ?>" class="form-control" name="periode_tahun" readonly>
+																				<div class="form-group">
+																					<label for="pegawai_id">Nama Pegawai</label>
+																					<select id="pegawai_id" class="form-control" name="pegawai_id">
+																						<?php foreach ($data_pegawai as $i) : ?>
+																							<option value="<?= $i->id_pegawai ?>"><?= $i->nama; ?></option>
+																						<?php endforeach; ?>
+																					</select>
 																				</div>
-																			</div>
-																			<div class="form-group">
-
-																			</div>
-																			<!-- <div class="form-group">
-																				<label for="departement_id">Departemen</label>
-																				<select id="departement_id" class="form-control" name="departement_id">
-																					<?php foreach ($data_departement as $i) : ?>
-																						<option value="<?= $i->id_departement ?>"><?= $i->namadepartement; ?></option>
-																					<?php endforeach; ?>
-																				</select>
-																			</div> -->
-																			<div class="form-group">
-																				<label for="pegawai_id">Nama Pegawai</label>
-																				<select id="pegawai_id" class="form-control" name="pegawai_id">
-																					<?php foreach ($data_pegawai as $i) : ?>
-																						<option value="<?= $i->id_pegawai ?>"><?= $i->nama; ?></option>
-																					<?php endforeach; ?>
-																				</select>
-																			</div>
-																		</fieldset>
-																		<h4>Formulir Penilaian</h4>
-																		<div class="table-responsive pt-3">
-																			<table class="table table-bordered">
-																				<thead>
-																					<tr>
-																						<th>#</th>
-																						<th>Pernyataan</th>
-																						<th>Sifat</th>
-																						<th>Jawaban</th>
-																					</tr>
-																				</thead>
-																				<tbody>
-																					<?php
-																					$no = 1;
-																					foreach ($data_kriteria as $i) : ?>
+																			</fieldset>
+																			<h4>Formulir Penilaian</h4>
+																			<div class="table-responsive pt-3">
+																				<table class="table table-bordered">
+																					<thead>
 																						<tr>
-																							<td><?= $no++; ?></td>
-																							<td>
-																								<?= $i->kriteria_nama; ?>
-																								<input type="hidden" name="kriteria_id[]" value="<?= $i->kriteria_id ?>" readonly>
-																							</td>
-																							<td><?= $i->namakategori; ?></td>
-																							<td>
-																								<div class="form-group">
-																									<select class="form-control" name="jawaban[]">
-																										<option value="1">Sangat Tidak Setuju</option>
-																										<option value="2">Tidak Setuju</option>
-																										<option value="3" selected>Netral</option>
-																										<option value="4">Setuju</option>
-																										<option value="5">Sangat Setuju</option>
-																									</select>
-																								</div>
-																							</td>
+																							<th>#</th>
+																							<th>Pernyataan</th>
+																							<th>Sifat</th>
+																							<th>Jawaban</th>
 																						</tr>
-																					<?php endforeach; ?>
-																				</tbody>
-																			</table>
-																		</div>
-																		<div class="mt-4">
-																			<input class="btn btn-primary" type="submit" value="Submit">
-																		</div>
-																	</form>
+																					</thead>
+																					<tbody>
+																						<?php
+																						$no = 1;
+																						foreach ($data_kriteria as $i) : ?>
+																							<tr>
+																								<td><?= $no++; ?></td>
+																								<td>
+																									<?= $i->kriteria_nama; ?>
+																									<input type="hidden" name="kriteria_id[]" value="<?= $i->kriteria_id ?>" readonly>
+																								</td>
+																								<td><?= $i->namakategori; ?></td>
+																								<td>
+																									<div class="form-group">
+																										<select class="form-control" name="jawaban[]">
+																											<option value="1">Sangat Tidak Setuju</option>
+																											<option value="2">Tidak Setuju</option>
+																											<option value="3" selected>Netral</option>
+																											<option value="4">Setuju</option>
+																											<option value="5">Sangat Setuju</option>
+																										</select>
+																									</div>
+																								</td>
+																							</tr>
+																						<?php endforeach; ?>
+																					</tbody>
+																				</table>
+																			</div>
+																			<div class="mt-4">
+																				<input class="btn btn-primary" type="submit" value="Submit">
+																			</div>
+																		</form>
+																	<?php } ?>
 																</div>
 															</div>
 														</div>

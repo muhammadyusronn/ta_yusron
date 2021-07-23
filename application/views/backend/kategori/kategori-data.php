@@ -2,6 +2,7 @@
 <div class="container-fluid page-body-wrapper">
     <div class="main-panel">
         <div class="content-wrapper">
+            <a href="<?= base_url('create-ktg') ?>" class="btn btn-primary mb-2"><i class="fas fa-plus"></i> Tambah Data</a>
             <?php echo $this->session->flashdata('msg'); ?>
             <div class="card">
                 <div class="card-body">

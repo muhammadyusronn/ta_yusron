@@ -2,6 +2,7 @@
 <div class="container-fluid page-body-wrapper">
     <div class="main-panel">
         <div class="content-wrapper">
+            <a href="<?= base_url('create-krt') ?>" class="btn btn-primary mb-2"><i class="fas fa-plus"></i> Tambah Data</a>
             <?php echo $this->session->flashdata('msg'); ?>
             <div class="card">
                 <div class="card-body">
@@ -14,7 +15,6 @@
                                         <tr>
                                             <th>Kategori</th>
                                             <th>Nama Kriteria</th>
-                                            <th>Nilai</th>
                                             <th>Bobot</th>
                                             <th>Sifat</th>
                                             <th>Actions</th>
@@ -27,11 +27,10 @@
                                             <tr>
                                                 <td><?= $i->namakategori ?></td>
                                                 <td><?= $i->kriteria_nama ?></td>
-                                                <td><?= $i->kriteria_nilai ?></td>
                                                 <td><?= $i->kriteria_bobot ?></td>
                                                 <td><?= $i->kriteria_sifat ?></td>
                                                 <td>
-                                                    <a class="btn btn-inverse-primary btn-fw" title="Detail"><i class="fas fa-eye"></i></a>
+                                                    <a class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
                                                     <a href="<?= base_url('backend/c_kriteria/destroy/' . $i->kriteria_id); ?>" class="btn btn-inverse-danger btn-fw tombol-hapus" title="HAPUS"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>

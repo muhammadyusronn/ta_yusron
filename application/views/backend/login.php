@@ -7,7 +7,7 @@
                         <div class="col-lg-4 mx-auto">
                             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                                 <div class="brand-logo">
-                                    <img src="https://www.bootstrapdash.com/demo/justdo/template/images/logo.svg" alt="logo">
+                                    <!-- <img src="https://www.bootstrapdash.com/demo/justdo/template/images/logo.svg" alt="logo"> -->
                                 </div>
                                 <h4>Hello!</h4>
                                 <h6 class="font-weight-light">Sign in to continue.</h6>
@@ -25,10 +25,10 @@
                                     <div class="my-2 d-flex justify-content-between align-items-center">
                                         <div class="form-check">
                                         </div>
-                                        <a href="#" class="auth-link text-black">Forgot password?</a>
+                                        <!-- <a href="#" class="auth-link text-black">Forgot password?</a> -->
                                     </div>
                                     <div class="text-center mt-4 font-weight-light">
-                                        Don't have an account? <a href="<?= base_url('register') ?>" class="text-primary">Create</a>
+                                        <!-- Don't have an account? <a href="<?= base_url('register') ?>" class="text-primary">Create</a> -->
                                     </div>
                                 </form>
                             </div>

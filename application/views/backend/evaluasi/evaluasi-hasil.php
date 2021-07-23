@@ -14,7 +14,9 @@
                                         <tr>
                                             <th>NIP</th>
                                             <th>Nama</th>
+                                            <th>Departement</th>
                                             <th>Hasil</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -24,7 +26,11 @@
                                             <tr>
                                                 <td><?= $i->nip ?></td>
                                                 <td><?= $i->nama ?></td>
-                                                <td><?= $data_hasilpenilaian[$j] ?></td>
+                                                <td><?= $i->namadepartement ?></td>
+                                                <td><?= round($data_hasilpenilaian[$j], 3) ?></td>
+                                                <td>
+                                                    <a href="" class="btn btn-inverse-success btn-fw" title="DETAIL"><i class="fas fa-eye"></i></a>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

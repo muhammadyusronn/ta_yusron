@@ -159,7 +159,7 @@ class C_evaluasi extends MY_Controller
     {
         foreach ($alternatif as $i => $v) {
             foreach ($kriteria as $j => $k) {
-                $sum_arr[$i] +=  $preferensi[$i][$j];
+                $sum_arr[$i] +=  ($preferensi[$i][$j]);
             }
         }
         return $sum_arr;

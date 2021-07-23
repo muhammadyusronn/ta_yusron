@@ -12,101 +12,10 @@
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item dropdown mr-1">
-                        <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
-                            <i class="fas fa-envelope mx-0"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                            <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="<?= base_url('assets/') ?>images/faces/face4.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow">
-                                    <h6 class="preview-subject ellipsis font-weight-normal">David Grey
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        The meeting is cancelled
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="<?= base_url('assets/') ?>images/faces/face2.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow">
-                                    <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        New product launch
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="<?= base_url('assets/') ?>images/faces/face3.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow">
-                                    <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        Upcoming board meeting
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                            <i class="fas fa-bell mx-0"></i>
-                            <span class="count"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <div class="preview-icon bg-success">
-                                        <i class="ti-info-alt mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        Just now
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <div class="preview-icon bg-warning">
-                                        <i class="ti-settings mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject font-weight-normal">Settings</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        Private message
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <div class="preview-icon bg-info">
-                                        <i class="ti-user mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        2 days ago
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
+
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="<?= base_url('assets/images/faces/face28.jpg'); ?>" alt="profile" />
+                            <img src="<?= base_url('assets/images/icon.png'); ?>" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                             <a class="dropdown-item" href="<?= base_url('logout'); ?>">
@@ -189,18 +98,6 @@
                             <ul class="submenu-item">
                                 <li class="nav-item"><a class="nav-link" href="<?= base_url('create-krt') ?>">Tambah Kriteria</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?= base_url('kriteria') ?>">Data Kriteria</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="ti-pencil-alt menu-icon"></i>
-                            <span class="menu-title">Penilaian</span>
-                            <i class="fas fa-sort-down menu-arrow"></i></a>
-                        <div class="submenu">
-                            <ul class="submenu-item">
-                                <li class="nav-item"><a class="nav-link" href="<?= base_url('create-pnl') ?>">Tambah Penilaian</a></li>
-                                <li class="nav-item"><a class="nav-link" href="<?= base_url('penilaian') ?>">Data Penilaian</a></li>
                             </ul>
                         </div>
                     </li>
