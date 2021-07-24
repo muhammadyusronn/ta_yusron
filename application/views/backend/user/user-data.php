@@ -30,7 +30,7 @@
                                                 <td><?= $i->kontak ?></td>
                                                 <td><?= $i->level ?></td>
                                                 <td>
-                                                    <a class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
+                                                    <a href="<?= base_url('user/edit/' . $i->id_user) ?>" class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
                                                     <a href="<?= base_url('backend/c_user/destroy/' . $i->id_user); ?>" class="btn btn-inverse-danger btn-fw tombol-hapus" title="HAPUS"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>

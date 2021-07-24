@@ -1,6 +1,32 @@
 <?php
 class MY_Controller extends CI_Controller
 {
+    protected function sendingemail($to, $subject, $message)
+    {
+        $config = [
+            'mailtype'   => 'text',
+            'charset'    => 'iso-8859-1',
+            'protocol'   => 'smptp',
+            'smptp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user'  => 'testingemailcodeku@gmail.com',
+            'smtp_pass'  => '123yusron,./',
+            'smtp_port'  => 465
+
+        ];
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+
+        $this->email->from('testingemailcodeku@gmail.com');
+        $this->email->to($to);
+        $this->email->subject($subject);
+        $this->email->message($message);
+        $send = $this->email->send();
+        if ($send) {
+            echo 'success';
+        } else {
+            show_error($this->email->print_debugger());
+        }
+    }
     protected function arr_bulan($id)
     {
         $arrNamaBulan = array("01" => "Januari", "02" => "Februari", "03" => "Maret", "04" => "April", "05" => "Mei", "06" => "Juni", "07" => "Juli", "08" => "Agustus", "09" => "September", "10" => "Oktober", "11" => "November", "12" => "Desember");

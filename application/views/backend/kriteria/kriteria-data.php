@@ -30,7 +30,7 @@
                                                 <td><?= $i->kriteria_bobot ?></td>
                                                 <td><?= $i->kriteria_sifat ?></td>
                                                 <td>
-                                                    <a class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
+                                                    <a href="<?= base_url('kriteria/edit/' . $i->kriteria_id) ?>" class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
                                                     <a href="<?= base_url('backend/c_kriteria/destroy/' . $i->kriteria_id); ?>" class="btn btn-inverse-danger btn-fw tombol-hapus" title="HAPUS"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>

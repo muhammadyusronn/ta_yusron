@@ -25,7 +25,7 @@
                                         <label for="level">Level</label>
                                         <select id="level" class="form-control" name="level" required>
                                             <option disabled>Pilih Level User</option>
-                                            <option>Pimpinan</option>
+                                            <option>Penilai</option>
                                             <option>Admin</option>
                                         </select>
                                     </div>

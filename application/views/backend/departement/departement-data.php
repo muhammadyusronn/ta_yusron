@@ -26,7 +26,7 @@
                                                 <td><?= $i->namadepartement ?></td>
                                                 <td><?= $i->deskripsidepartement ?></td>
                                                 <td>
-                                                    <a class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
+                                                    <a href="<?= base_url('departement/edit/' . $i->id_departement) ?>" class="btn btn-inverse-warning btn-fw" title="EDIT"><i class="fas fa-pen"></i></a>
                                                     <a href="<?= base_url('backend/c_departement/destroy/' . $i->id_departement); ?>" class="btn btn-inverse-danger btn-fw tombol-hapus" title="HAPUS"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>

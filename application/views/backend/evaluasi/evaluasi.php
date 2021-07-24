@@ -69,15 +69,6 @@
 																	<?php } ?>
 																</select>
 															</div>
-															<!-- <div class="form-group">
-																<label for="departement_id">Departemen</label>
-																<select id="departement_id" class="form-control" name="departement_id">
-																	<option value="0" selected>Semua Departemen</option>
-																	<?php foreach ($data_departement as $x) : ?>
-																		<option value="<?= $x->id_departement ?>"><?= $x->namadepartement ?></option>
-																	<?php endforeach ?>
-																</select>
-															</div> -->
 															<input class="btn btn-primary" type="submit" value="LIHAT HASIL EVALUASI">
 														</fieldset>
 													</form>
@@ -89,7 +80,7 @@
 																<div class="col-lg-12">
 																	<?php if (count($data_pegawai) == 0) { ?>
 																		<h3>Anda sudah melakukan evaluasi periode bulan <?= $arrNamaBulan[$current_month] ?> tahun <?= $current_year ?></h3>
-																		<a href="<?= base_url() ?>" class="btn btn-primary"><i class="fas fa-envelope"></i> Broadcast Hasil Evaluasi</a>
+																		<a href="<?= base_url('evaluasi/broadcast') ?>" class="btn btn-primary"><i class="fas fa-envelope"></i> Broadcast Hasil Evaluasi</a>
 																	<?php } else {
 																	?>
 																		<form class="cmxform" id="jabatan-create" method="post" action="<?= base_url('evaluasi/save') ?>">

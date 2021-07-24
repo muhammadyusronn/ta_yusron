@@ -32,23 +32,7 @@ class C_user extends MY_Controller
 
     public function save()
     {
-        $config = array(
-            array(
-                'field' => 'nama',
-                'label' => 'Nama',
-                'rules' => 'required'
-            ),
-            array(
-                'field' => 'nip',
-                'label' => 'NIP',
-                'rules' => 'required'
-            ),
-            array(
-                'field' => 'kontak',
-                'label' => 'Kontak',
-                'rules' => 'required'
-            ),
-        );
+        $config = $this->rules();
         $this->form_validation->set_rules($config);
         if ($this->form_validation->run() == FALSE) {
             $this->flashmsg(validation_errors(), 'danger');
@@ -78,6 +62,42 @@ class C_user extends MY_Controller
         }
     }
 
+    public function edit()
+    {
+        $user_id = $this->uri->segment(3);
+        $data['title'] = 'Update Data User';
+        $data['data_user'] = $this->m_user->get("id_user = $user_id");
+        $this->render('backend/user/user-update', $data);
+    }
+
+    public function update()
+    {
+        $config = $this->rules();
+        $this->form_validation->set_rules($config);
+        if ($this->form_validation->run() == FALSE) {
+            $this->flashmsg(validation_errors(), 'danger');
+            redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            $data = array(
+                'nip' => $this->post('nip'),
+                'nama' => $this->post('nama'),
+                'kontak' => $this->post('kontak'),
+                'level' => $this->post('level')
+            );
+            $user_id = $this->POST('id_user');
+            $this->db->trans_start();
+            $this->m_user->update($user_id, $data);
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $this->flashmsg('Gagal mengubah data', 'danger');
+                redirect('user');
+            } else {
+                $this->flashmsg('Sukses mengubah data', 'success');
+                redirect('user');
+            }
+        }
+    }
+
     public function destroy($id)
     {
         $this->db->trans_start();
@@ -90,5 +110,27 @@ class C_user extends MY_Controller
             $this->flashmsg('Sukses menghapus data', 'success');
             redirect('user');
         }
+    }
+
+    public function rules()
+    {
+        $config = array(
+            array(
+                'field' => 'nama',
+                'label' => 'Nama',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'nip',
+                'label' => 'NIP',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'kontak',
+                'label' => 'Kontak',
+                'rules' => 'required'
+            ),
+        );
+        return $config;
     }
 }

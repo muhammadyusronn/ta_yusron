@@ -106,6 +106,20 @@ class C_evaluasi extends MY_Controller
         }
     }
 
+    public function broadcast()
+    {
+        $subject = 'Hasil evaluasi kinerja';
+        $message = 'Halo! Kami dari tim evaluasi kinerja Rumah Sakit Dr. Noesmir Baturaja 
+        ingin menginformasikan bahwa hasil evaluasi kinerja sudah bisa dilihat di ' . base_url('evaluasi/reports');
+        $this->sendingemail('hartoyomuhammady@gmail.com', $message, $subject);
+        exit;
+        $data_pegawai = $this->m_pegawai->get();
+        foreach ($data_pegawai as $i) {
+            echo $message . '<br>';
+            echo 'sending broadcast to ' . $i->nama . ' telepon ' . $i->kontak . '<br>';
+        }
+    }
+
     private function kriteria()
     {
         return $this->m_kriteria->get_kriteria();

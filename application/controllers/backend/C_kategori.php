@@ -32,19 +32,7 @@ class C_kategori extends MY_Controller
 
     public function save()
     {
-        $config = array(
-            array(
-                'field' => 'namakategori',
-                'label' => 'Nama Kategori',
-                'rules' => 'required'
-            ),
-            array(
-                'field' => 'deskripsikategori',
-                'label' => 'Deskripsi Kategori',
-                'rules' => 'required'
-            ),
-        );
-        $this->form_validation->set_rules($config);
+        $this->form_validation->set_rules($this->rules());
         if ($this->form_validation->run() == FALSE) {
             $this->flashmsg(validation_errors(), 'danger');
             redirect($_SERVER['HTTP_REFERER']);
@@ -67,6 +55,39 @@ class C_kategori extends MY_Controller
         }
     }
 
+    public function edit()
+    {
+        $kategori_id = $this->uri->segment(3);
+        $data['data_kategori'] = $this->m_kategori->get("id_kategori = $kategori_id");
+        $data['title'] = 'Update Kategori';
+        $this->render('backend/kategori/kategori-update', $data);
+    }
+
+    public function update()
+    {
+        $this->form_validation->set_rules($this->rules());
+        if ($this->form_validation->run() == FALSE) {
+            $this->flashmsg(validation_errors(), 'danger');
+            redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            $data = [
+                'namakategori'      => $this->post('namakategori'),
+                'deskripsikategori' => $this->post('deskripsikategori'),
+
+            ];
+            $this->db->trans_start();
+            $insert = $this->m_kategori->update($this->POST('id_kategori'), $data);
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $this->flashmsg('Gagal mengubah data', 'danger');
+                redirect('kategori');
+            } else {
+                $this->flashmsg('Sukses mengubah data', 'success');
+                redirect('kategori');
+            }
+        }
+    }
+
     public function destroy($id)
     {
         $this->db->trans_start();
@@ -79,5 +100,22 @@ class C_kategori extends MY_Controller
             $this->flashmsg('Sukses menghapus data', 'success');
             redirect('kategori');
         }
+    }
+
+    protected function rules()
+    {
+        $config = array(
+            array(
+                'field' => 'namakategori',
+                'label' => 'Nama Kategori',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'deskripsikategori',
+                'label' => 'Deskripsi Kategori',
+                'rules' => 'required'
+            ),
+        );
+        return $config;
     }
 }
