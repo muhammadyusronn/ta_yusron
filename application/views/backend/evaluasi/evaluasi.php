@@ -1,4 +1,3 @@
-		<!-- partial -->
 		<?php
 		$current_year = date('Y');
 		$current_month = date('m');
@@ -80,7 +79,7 @@
 																<div class="col-lg-12">
 																	<?php if (count($data_pegawai) == 0) { ?>
 																		<h3>Anda sudah melakukan evaluasi periode bulan <?= $arrNamaBulan[$current_month] ?> tahun <?= $current_year ?></h3>
-																		<a href="<?= base_url('evaluasi/broadcast') ?>" class="btn btn-primary"><i class="fas fa-envelope"></i> Broadcast Hasil Evaluasi</a>
+																		<button id="btn_send" class="btn btn-primary" value="<?= base_url('evaluasi/broadcast') ?>" onclick="disableButton(this.value)"><i class="fas fa-envelope-open"></i> Broadcast Hasil Evaluasi</button>
 																	<?php } else {
 																	?>
 																		<form class="cmxform" id="jabatan-create" method="post" action="<?= base_url('evaluasi/save') ?>">
@@ -199,3 +198,11 @@
 					</div>
 				</div>
 				<!-- content-wrapper ends -->
+				<script>
+					function disableButton(val) {
+						var btn = document.getElementById('btn_send');
+						btn.disabled = true;
+						btn.innerText = 'Broadcasting...'
+						window.location.href = val;
+					}
+				</script>
