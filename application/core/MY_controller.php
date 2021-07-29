@@ -138,6 +138,12 @@ class MY_Controller extends CI_Controller
         $this->load->view($view, $data);
         $this->load->view('backend/layouts/foot-login');
     }
+    protected function renderp($view, $data = '')
+    {
+        $this->load->view('backend/layouts/head-pengunjung', $data);
+        $this->load->view($view, $data);
+        $this->load->view('backend/layouts/foot-pengunjung');
+    }
     protected function flashmsg($msg, $type = 'success', $name = 'msg')
     {
         return $this->session->set_flashdata($name, '<div class="alert alert-' . $type . ' alert-dismissable" role="alert">

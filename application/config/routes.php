@@ -45,6 +45,7 @@ $route['evaluasi/result']                 = 'backend/c_evaluasi/result';
 $route['evaluasi/save']                   = 'backend/c_evaluasi/save';
 $route['evaluasi/destroy']                = 'backend/c_evaluasi/destroy';
 $route['evaluasi/broadcast']              = 'backend/c_evaluasi/broadcast';
+$route['evaluasi/reports']                = 'c_pengumuman/reports';
 
 // Errors Handling
 $route['404-error'] = 'backend/c_errors/not_found';
