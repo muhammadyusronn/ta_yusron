@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 24 Jul 2021 pada 23.28
+-- Waktu pembuatan: 29 Jul 2021 pada 23.11
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -39,8 +39,9 @@ CREATE TABLE `departement` (
 --
 
 INSERT INTO `departement` (`id_departement`, `namadepartement`, `deskripsidepartement`) VALUES
-(2, 'Poly Anak', 'tess'),
-(3, 'Poly Gigi', 'tes poly gigi');
+(2, 'URTUUD', 'ini adalah departement URTUUD'),
+(3, 'Instal WATLAN', 'Ini adalah departement untuk Install WATLAN'),
+(4, 'Unit Farmasi', 'Ini adalah departement untuk unit farmasi');
 
 -- --------------------------------------------------------
 
@@ -107,11 +108,11 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id_pegawai`, `nip`, `nama`, `departement_id`, `kontak`) VALUES
-(7, '1231', 'Yusron', 2, '082186427595'),
-(8, '1232', 'Ruben', 2, '087878829992'),
-(9, '1233', 'Edho', 2, '08128829922'),
-(10, '1234', 'Budi', 2, '081772772822'),
-(11, '1235', 'Jimmy', 2, '0819229222833');
+(7, '1231', 'Letda. A.Sobirin, S.Kep', 2, '082186427595'),
+(8, '1232', 'Desi Yulia Rohana, S.Kep', 3, '081278154875'),
+(9, '1233', 'Diana Vepalia, Amd', 2, '085384371128'),
+(10, '1234', 'Elisa, AMAK', 4, '081278362929'),
+(11, '1235', 'Erviana, AMAK', 4, '0819229222833');
 
 -- --------------------------------------------------------
 
@@ -133,26 +134,22 @@ CREATE TABLE `penilaian` (
 --
 
 INSERT INTO `penilaian` (`id_penilaian`, `pegawai_id`, `kriteria_id`, `jawaban`, `periode_bulan`, `periode_tahun`) VALUES
-(82, 7, 4, 4, 7, 2021),
-(83, 7, 6, 4, 7, 2021),
-(84, 7, 7, 4, 7, 2021),
-(85, 7, 5, 3, 7, 2021),
-(86, 8, 4, 3, 7, 2021),
-(87, 8, 6, 3, 7, 2021),
-(88, 8, 7, 4, 7, 2021),
-(89, 8, 5, 4, 7, 2021),
-(90, 9, 4, 3, 7, 2021),
-(91, 9, 6, 3, 7, 2021),
-(92, 9, 7, 5, 7, 2021),
-(93, 9, 5, 3, 7, 2021),
-(94, 10, 4, 3, 7, 2021),
-(95, 10, 6, 3, 7, 2021),
-(96, 10, 7, 3, 7, 2021),
-(97, 10, 5, 4, 7, 2021),
-(98, 11, 4, 3, 7, 2021),
-(99, 11, 6, 3, 7, 2021),
-(100, 11, 7, 4, 7, 2021),
-(101, 11, 5, 2, 7, 2021);
+(118, 7, 4, 4, 7, 2021),
+(119, 7, 6, 4, 7, 2021),
+(120, 7, 7, 4, 7, 2021),
+(121, 7, 5, 3, 7, 2021),
+(122, 8, 4, 3, 7, 2021),
+(123, 8, 6, 3, 7, 2021),
+(124, 8, 7, 4, 7, 2021),
+(125, 8, 5, 4, 7, 2021),
+(126, 9, 4, 3, 7, 2021),
+(127, 9, 6, 3, 7, 2021),
+(128, 9, 7, 5, 7, 2021),
+(129, 9, 5, 3, 7, 2021),
+(130, 10, 4, 3, 7, 2021),
+(131, 10, 6, 3, 7, 2021),
+(132, 10, 7, 3, 7, 2021),
+(133, 10, 5, 4, 7, 2021);
 
 -- --------------------------------------------------------
 
@@ -175,8 +172,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nip`, `nama`, `kontak`, `level`, `password`, `last_login`) VALUES
-(8, '1111', 'Admin', '082186427595', 'Admin', '$2y$10$0lUKsflEUpMG1kHB2KJjZur8feVnhnesgdY8UxZOVuERDWA966XJK', '2021-07-24 20:41:51'),
-(9, '2222', 'Penilai', '08128829992', 'Penilai', '$2y$10$1I3JIPQkWCZRRtPGaIrdg.vaVg3OxTpt9sgDyHHLSTa466cB/uqui', '2021-07-24 15:02:37');
+(8, '1111', 'Admin', '082186427595', 'Admin', '$2y$10$0lUKsflEUpMG1kHB2KJjZur8feVnhnesgdY8UxZOVuERDWA966XJK', '2021-07-29 15:38:48'),
+(9, '2222', 'Penilai', '08128829992', 'Penilai', '$2y$10$1I3JIPQkWCZRRtPGaIrdg.vaVg3OxTpt9sgDyHHLSTa466cB/uqui', '2021-07-29 16:10:20');
 
 --
 -- Indexes for dumped tables
@@ -256,7 +253,7 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT untuk tabel `penilaian`
 --
 ALTER TABLE `penilaian`
-  MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

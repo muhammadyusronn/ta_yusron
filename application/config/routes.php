@@ -48,8 +48,8 @@ $route['evaluasi/broadcast']              = 'backend/c_evaluasi/broadcast';
 $route['evaluasi/reports']                = 'c_pengumuman/reports';
 
 // Errors Handling
-$route['404-error'] = 'backend/c_errors/not_found';
+$route['404-error'] = 'c_404';
 
 $route['default_controller'] = 'welcome';
-$route['404_override'] = 'backend/c_errors/not_found';
+$route['404_override'] = 'c_404';
 $route['translate_uri_dashes'] = FALSE;
